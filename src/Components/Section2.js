@@ -3,25 +3,36 @@ import React from 'react';
 export default function Section2(props) {
   return (
     <div className='container my-5 p-3'>
+      <h4 className='text-start'>Today Overview</h4>
         <div className='row'>
-        <div className='col'></div>
-            <div className='col-4 text-start mx-2'>
-                <h6>Local Time : {props.data.location.localtime}</h6>
-                <h6>Timezone : {props.data.location.tz_id}</h6>
-                <h6>Country : {props.data.location.country}</h6>
-                <h6>Latitude : {props.data.location.lat}</h6>
-                <h6>Longitude : {props.data.location.lon}</h6>
+            <div className='col'></div>
+            <div className='col-5 text-start my-4'>
+                <div className='Cards'>
+                  <h6>Local Time </h6><h1 className='text-start '>{props.data.location.localtime.split(" ")[1]}</h1>
+                </div>
             </div>
-            
-            <div className='col-3 text-start mx-2'>
-              <h6>Wind in mph : {props.data.current.wind_mph} </h6>
-              <h6>Wind in kmph : {props.data.current.wind_kph} </h6>
-              <h6>Wind degree : {props.data.current.wind_degree} </h6>
-              <h6>Wind Direction : {props.data.current.wind_dir} </h6>
+            <div className='col-5 text-start my-4'>
+                <div className='Cards'>
+                  <h6>Cloud </h6><h1 className='text-start '>{props.data.current.cloud}%</h1>
+                </div>
             </div>
             <div className='col'></div>
         </div>
-        
+
+        <div className='row'>
+            <div className='col'></div>
+            <div className='col-5 text-start my-4'>
+                <div className='Cards'>
+                  <h6>Wind </h6><h1 className='text-start '>{props.data.current.wind_kph} km/hr</h1>
+                </div>
+            </div>
+            <div className='col-5 text-start my-4'>
+                <div className='Cards'>
+                  <h6>Wind Direction </h6><h1 className='text-start '>{props.data.current.wind_dir}</h1>
+                </div>
+            </div>
+            <div className='col'></div>
+        </div>
     </div>
   );
 }

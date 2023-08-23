@@ -28,7 +28,7 @@ export default function Section1(props) {
                 </div>
                 <div className='row'>
                     <div className='col-6 text-start'>
-                        <p style={{fontSize: "large",fontWeight : 'bold',lineHeight:'16px'}}>Humidity : {props.data.current.humidity}</p>
+                        <p style={{fontSize: "large",fontWeight : 'bold',lineHeight:'16px'}}>Humidity : {props.data.current.humidity}%</p>
                         <p style={{fontSize: "large",fontWeight : 'bold',lineHeight:'16px'}}>Pressure : {props.data.current.pressure_in}</p>
                         <p style={{fontSize: "large",fontWeight : 'bold',lineHeight:'16px'}}>UV index : {props.data.current.uv}</p>
                     </div>
@@ -54,7 +54,7 @@ export default function Section1(props) {
                     </div>
                     <div className='col-5 px-2 py-2 mx-3 my-2'>
                         <p className='fw-bold'>Moon Illumination</p>
-                        <p>{props.data.forecast.forecastday[0].astro.moon_illumination}</p>
+                        <p>{props.data.forecast.forecastday[0].astro.moon_illumination}%</p>
                     </div>
                     
                 </div>

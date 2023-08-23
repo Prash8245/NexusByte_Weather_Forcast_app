@@ -44,7 +44,7 @@ code {
 }
 
 #section1{
-  background-color: rgba(2, 8, 13, 0.523);
+  background-color: #00001d87;
   color: white;
   padding: 1rem;
   height: 100%;
@@ -61,10 +61,28 @@ code {
   /* border-radius: 3rem; */
 }
 
+#Section3 *{
+  color: black;
+  text-decoration: none;
+}
+
 .Cards{
   /* width: 15rem; */
   background-color: rgba(240, 248, 255, 0.748);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1rem;
   border-radius: 0.5rem;
+}
+
+.Navbar{
+  background-color: #00001D;
+  color: white;
+  padding: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+#info{
+  background-color: rgba(240, 248, 255, 0.523);
+  color: black;
 }

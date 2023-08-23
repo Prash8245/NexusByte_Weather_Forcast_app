@@ -12,14 +12,14 @@ export default function Home() {
 
   useEffect(()=>{
     fetchData();
-  },[]);
+  });
   
   const fetchData = async (place) =>{
     try {
         setlocation(place);
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=f69aeb38dcbf425ab25141645232208&q=${loca}`);
         const jsonData = await response.json();
-        jsonData.location ? setdata(jsonData) : console.log("Same Data");
+        jsonData.location ? setdata(jsonData) : console.log("Same Forcast Data");
 
     } catch (error) {
       console.error("Error in Fetching data");
@@ -29,14 +29,16 @@ export default function Home() {
   return (
     <div>
         <div className='row m-4 p-4 nav' >
-          <div className='col-3' onClick={()=>{fetchData('Bangalore') }}>Banglore</div>
+          <div className='col-3' onClick={()=>{fetchData('Bangalore') }}>Bangalore</div>
           <div className='col-3' onClick={()=>{fetchData('Chennai') }}>Chennai</div>
           <div className='col-3' onClick={()=>{fetchData('Mumbai') }}>Mumbai</div>
           <div className='col-3' onClick={()=>{fetchData('india') }}>New Delhi</div>
         </div>
-        <Section1 data={data} />
-        <Section2 data={data} />
-        <Section3 data={data} />
+        <div id='section1'>
+          <Section1 data={data} />
+          <Section2 data={data} />
+        </div>
+        <Section3 data={data} location={loca} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect ,useState} from 'react';
-import defaultData from './data.json';
+import defaultData from './forcast.json';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
@@ -17,7 +17,7 @@ export default function Home() {
   const fetchData = async (place) =>{
     try {
         setlocation(place);
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=f69aeb38dcbf425ab25141645232208&q=${loca}`);
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=f69aeb38dcbf425ab25141645232208&q=${loca}&days=7`);
         const jsonData = await response.json();
         jsonData.location ? setdata(jsonData) : console.log("Same Forcast Data");
 

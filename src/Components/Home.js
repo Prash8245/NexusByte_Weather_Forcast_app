@@ -46,6 +46,7 @@ const GetYear = (values)=>{
   return (
     <div className='row my-2'>
       <div id='leftside' className='col-8'>
+        {/*NavBar */}
         <div id='Navbar' className='row p-3 '>
               <div className='col-3'>
                   <h4>{
@@ -69,24 +70,18 @@ const GetYear = (values)=>{
                     }
                   }}></i>
               </div>       
-          </div>
-          <Section2 data={data} />
-          <Section3 data={data} location={loca} /> 
         </div>
-        <div className='col-4'>
+        {/* Overview Component */}
+        <Section2 data={data} />
+        {/* Forecast Component */}
+        <Section3 data={data} location={loca} /> 
+      </div>
+      <div className='col-4'>
         <div id='section1'>
+            {/* Current Condition Component */}
             <Section1 data={data} />
         </div>
       </div>
-          
-        {/* <div className='row m-4 p-4 nav' >
-          <div className='col-3' onClick={()=>{fetchData('Bangalore') }}>Bangalore</div>
-          <div className='col-3' onClick={()=>{fetchData('Chennai') }}>Chennai</div>
-          <div className='col-3' onClick={()=>{fetchData('Mumbai') }}>Mumbai</div>
-          <div className='col-3' onClick={()=>{fetchData('india') }}>New Delhi</div>
-        </div> */}
-        
-        
     </div>
   );
 }

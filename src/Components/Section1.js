@@ -2,6 +2,7 @@ import React from 'react';
 
 export default function Section1(props) {
 
+    /* Function to switch b/w Celcius and Farenhiet */
     const changeTempF = ()=>{
         document.getElementById('temp').innerHTML = props.data.current.temp_f
     }
@@ -15,9 +16,12 @@ export default function Section1(props) {
         <div className='row'>
             <div className='col-12'>
                 <div className='row mb-4'>
+                    {/* Current condition img */}
                     <div className='col-5'>
                         <img className='image' src={props.data.current.condition.icon} alt='condition img' />
                     </div>
+
+                    {/* Temperature */}
                     <div className='col-5 pt-4'>
                         <h1 className='d-inline'> 
                             <span id='temp'>{props.data.current.temp_c}</span><sup>o</sup>
@@ -26,6 +30,8 @@ export default function Section1(props) {
                         <h5 className='d-inline' style={{cursor : 'pointer'}} onClick={changeTempF}>F</h5>
                     </div>
                 </div>
+
+                {/* Condition and Location Data */}
                 <div className='row'>
                     <div className='col-6 text-start'>
                         <p style={{fontSize: "large",fontWeight : 'bold',lineHeight:'16px'}}>Humidity : {props.data.current.humidity}%</p>
@@ -38,20 +44,25 @@ export default function Section1(props) {
                         <h5>{props.data.current.condition.text}</h5>
                     </div>
                 </div>
+
+                {/* Sun and Moon Data */}
                 <div className='row my-5 text-start'>
                     <h5>Sunrise and Sunset</h5>
                     <div className='col-5 px-2 py-2 mx-3 my-2'>
                         <p className='fw-bold'>Sunrise</p>
                         <p>{props.data.forecast.forecastday[0].astro.sunrise}</p>
                     </div>
+
                     <div className='col-5 px-2 py-2 mx-3 my-2'>
                         <p className='fw-bold'>Sunset</p>
                         <p>{props.data.forecast.forecastday[0].astro.sunset}</p>
                     </div>
+
                     <div className='col-5 px-2 py-2 mx-3 my-2'>
                         <p className='fw-bold'>Moon Phase</p>
                         <p>{props.data.forecast.forecastday[0].astro.moon_phase}</p>
                     </div>
+
                     <div className='col-5 px-2 py-2 mx-3 my-2'>
                         <p className='fw-bold'>Moon Illumination</p>
                         <p>{props.data.forecast.forecastday[0].astro.moon_illumination}%</p>
